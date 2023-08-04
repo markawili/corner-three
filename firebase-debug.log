@@ -1,0 +1,120 @@
+[debug] [2023-08-03T09:58:14.865Z] ----------------------------------------------------------------------
+[debug] [2023-08-03T09:58:14.866Z] Command:       /Users/markandrew.awili/.nvm/versions/node/v18.16.1/bin/node /Users/markandrew.awili/.nvm/versions/node/v18.16.1/bin/firebase deploy --only functions --debug
+[debug] [2023-08-03T09:58:14.866Z] CLI Version:   12.4.7
+[debug] [2023-08-03T09:58:14.866Z] Platform:      darwin
+[debug] [2023-08-03T09:58:14.866Z] Node Version:  v18.16.1
+[debug] [2023-08-03T09:58:14.868Z] Time:          Thu Aug 03 2023 17:58:14 GMT+0800 (Philippine Standard Time)
+[debug] [2023-08-03T09:58:14.868Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-08-03T09:58:14.903Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-08-03T09:58:14.904Z] > authorizing via signed-in user (markandrew.awili@gmail.com)
+[debug] [2023-08-03T09:58:14.904Z] [iam] checking project corner-three for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2023-08-03T09:58:14.905Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/corner-three:testIamPermissions [none]
+[debug] [2023-08-03T09:58:14.905Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/corner-three:testIamPermissions x-goog-quota-user=projects/corner-three
+[debug] [2023-08-03T09:58:14.905Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/corner-three:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-08-03T09:58:27.314Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/corner-three:testIamPermissions 200
+[debug] [2023-08-03T09:58:27.315Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/corner-three:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-08-03T09:58:27.315Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/corner-three/serviceAccounts/corner-three@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2023-08-03T09:58:27.316Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/corner-three/serviceAccounts/corner-three@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2023-08-03T09:58:28.453Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/corner-three/serviceAccounts/corner-three@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2023-08-03T09:58:28.454Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/corner-three/serviceAccounts/corner-three@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'corner-three'...
+[info] 
+[info] i  deploying functions 
+[debug] [2023-08-03T09:58:28.456Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/corner-three [none]
+[debug] [2023-08-03T09:58:28.988Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/corner-three 200
+[debug] [2023-08-03T09:58:28.988Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/corner-three {"projectId":"corner-three","projectNumber":"153244501650","displayName":"corner-three","name":"projects/corner-three","resources":{"hostingSite":"corner-three","storageBucket":"corner-three.appspot.com","locationId":"asia-southeast1"},"state":"ACTIVE","etag":"1_36e07a7b-3f94-4393-b56b-78b1716db49d"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2023-08-03T09:58:28.991Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/corner-three/services/cloudfunctions.googleapis.com [none]
+[debug] [2023-08-03T09:58:28.991Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/corner-three/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/corner-three
+[debug] [2023-08-03T09:58:28.993Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/corner-three/services/runtimeconfig.googleapis.com [none]
+[debug] [2023-08-03T09:58:28.993Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/corner-three/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/corner-three
+[debug] [2023-08-03T09:58:28.995Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/corner-three/services/cloudbuild.googleapis.com [none]
+[debug] [2023-08-03T09:58:28.995Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/corner-three/services/cloudbuild.googleapis.com x-goog-quota-user=projects/corner-three
+[debug] [2023-08-03T09:58:28.997Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/corner-three/services/artifactregistry.googleapis.com [none]
+[debug] [2023-08-03T09:58:28.997Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/corner-three/services/artifactregistry.googleapis.com x-goog-quota-user=projects/corner-three
+[debug] [2023-08-03T09:58:30.555Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/corner-three/services/cloudbuild.googleapis.com 200
+[debug] [2023-08-03T09:58:30.555Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/corner-three/services/cloudbuild.googleapis.com [omitted]
+[info] ✔  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2023-08-03T09:58:30.562Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/corner-three/services/runtimeconfig.googleapis.com 200
+[debug] [2023-08-03T09:58:30.562Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/corner-three/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2023-08-03T09:58:30.569Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/corner-three/services/artifactregistry.googleapis.com 200
+[debug] [2023-08-03T09:58:30.569Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/corner-three/services/artifactregistry.googleapis.com [omitted]
+[info] ✔  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2023-08-03T09:58:30.589Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/corner-three/services/cloudfunctions.googleapis.com 200
+[debug] [2023-08-03T09:58:30.590Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/corner-three/services/cloudfunctions.googleapis.com [omitted]
+[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2023-08-03T09:58:30.590Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/corner-three/adminSdkConfig [none]
+[debug] [2023-08-03T09:58:31.060Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/corner-three/adminSdkConfig 200
+[debug] [2023-08-03T09:58:31.060Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/corner-three/adminSdkConfig {"projectId":"corner-three","storageBucket":"corner-three.appspot.com","locationId":"asia-southeast1"}
+[debug] [2023-08-03T09:58:31.061Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/corner-three/configs [none]
+[debug] [2023-08-03T09:58:31.598Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/corner-three/configs 200
+[debug] [2023-08-03T09:58:31.598Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/corner-three/configs {}
+[debug] [2023-08-03T09:58:31.601Z] Validating nodejs source
+[debug] [2023-08-03T09:58:32.653Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2023-08-03T09:58:32.654Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2023-08-03T09:58:32.654Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-08-03T09:58:32.660Z] Found firebase-functions binary at '/Users/markandrew.awili/Desktop/cadetship/stint2/react/corner-three/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8920
+
+[debug] [2023-08-03T09:58:32.926Z] Got response from /__/functions.yaml {"endpoints":{"selectFeaturedPlayer":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"scheduleTrigger":{"schedule":"5 0 * * *","retryConfig":{"retryCount":null,"maxDoublings":null,"maxRetryDuration":null,"maxBackoffDuration":null,"minBackoffDuration":null},"timeZone":"Asia/Manila"},"labels":{},"entryPoint":"selectFeaturedPlayer"}},"specVersion":"v1alpha1","requiredAPIs":[{"api":"cloudscheduler.googleapis.com","reason":"Needed for scheduled functions."}]}
+[info] shutdown requested via /__/quitquitquit
+
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged /Users/markandrew.awili/Desktop/cadetship/stint2/react/corner-three/functions (65.7 KB) for uploading 
+[debug] [2023-08-03T09:58:32.951Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/corner-three/locations/-/functions [none]
+[debug] [2023-08-03T09:58:33.955Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/corner-three/locations/-/functions 200
+[debug] [2023-08-03T09:58:33.955Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/corner-three/locations/-/functions {"functions":[{"name":"projects/corner-three/locations/us-central1/functions/selectFeaturedPlayer","eventTrigger":{"eventType":"google.pubsub.topic.publish","resource":"projects/corner-three/topics/firebase-schedule-selectFeaturedPlayer-us-central1","service":"pubsub.googleapis.com","failurePolicy":{}},"status":"ACTIVE","entryPoint":"selectFeaturedPlayer","timeout":"60s","availableMemoryMb":256,"serviceAccountEmail":"corner-three@appspot.gserviceaccount.com","updateTime":"2023-08-03T09:55:43.442Z","versionId":"2","labels":{"deployment-tool":"cli-firebase","deployment-scheduled":"true","firebase-functions-hash":"1707535c8b281b104935f1fa83811a2634f491cd"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-379170125970.us-central1.cloudfunctions.appspot.com/f059b967-1730-4119-a5b8-070eec3108b2.zip","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"corner-three\",\"storageBucket\":\"corner-three.appspot.com\",\"locationId\":\"asia-southeast1\"}","GCLOUD_PROJECT":"corner-three","EVENTARC_CLOUD_EVENT_SOURCE":"projects/corner-three/locations/us-central1/functions/selectFeaturedPlayer"},"runtime":"nodejs18","maxInstances":3000,"ingressSettings":"ALLOW_ALL","buildId":"2773ea76-febd-44e1-90c9-7b95bfa680f8","buildEnvironmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"buildName":"projects/153244501650/locations/us-central1/builds/2773ea76-febd-44e1-90c9-7b95bfa680f8","dockerRegistry":"ARTIFACT_REGISTRY"}]}
+[debug] [2023-08-03T09:58:33.958Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/corner-three/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2023-08-03T09:58:35.762Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/corner-three/locations/-/functions 200
+[debug] [2023-08-03T09:58:35.763Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/corner-three/locations/-/functions {}
+[info] i  functions: ensuring required API cloudscheduler.googleapis.com is enabled... 
+[debug] [2023-08-03T09:58:35.766Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/corner-three/services/cloudscheduler.googleapis.com [none]
+[debug] [2023-08-03T09:58:35.766Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/corner-three/services/cloudscheduler.googleapis.com x-goog-quota-user=projects/corner-three
+[debug] [2023-08-03T09:58:37.109Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/corner-three/services/cloudscheduler.googleapis.com 200
+[debug] [2023-08-03T09:58:37.109Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/corner-three/services/cloudscheduler.googleapis.com [omitted]
+[info] ✔  functions: required API cloudscheduler.googleapis.com is enabled 
+[debug] [2023-08-03T09:58:37.112Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/corner-three [none]
+[debug] [2023-08-03T09:58:37.671Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/corner-three 200
+[debug] [2023-08-03T09:58:37.671Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/corner-three {"projectId":"corner-three","projectNumber":"153244501650","displayName":"corner-three","name":"projects/corner-three","resources":{"hostingSite":"corner-three","storageBucket":"corner-three.appspot.com","locationId":"asia-southeast1"},"state":"ACTIVE","etag":"1_36e07a7b-3f94-4393-b56b-78b1716db49d"}
+[info] i  functions: Skipping the deploy of unchanged functions with experimental support for skipdeployingnoopfunctions 
+[info] ✔  functions[selectFeaturedPlayer(us-central1)] Skipped (No changes detected) 
+[debug] [2023-08-03T09:58:37.677Z] Total Function Deployment time: 0
+[debug] [2023-08-03T09:58:37.677Z] 0 Functions Deployed
+[debug] [2023-08-03T09:58:37.677Z] 0 Functions Errored
+[debug] [2023-08-03T09:58:37.677Z] 0 Function Deployments Aborted
+[debug] [2023-08-03T09:58:37.678Z] Average Function Deployment time: NaN
+[info] i  functions: cleaning up build files... 
+[debug] [2023-08-03T09:58:37.680Z] >>> [apiv2][query] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/corner-three/locations/us-central1/repositories/gcf-artifacts/packages/select_featured_player [none]
+[debug] [2023-08-03T09:58:37.682Z] >>> [apiv2][query] GET https://us.gcr.io/v2/corner-three/gcf/us-central1/tags/list [none]
+[debug] [2023-08-03T09:58:38.188Z] <<< [apiv2][status] GET https://us.gcr.io/v2/corner-three/gcf/us-central1/tags/list 200
+[debug] [2023-08-03T09:58:38.189Z] <<< [apiv2][body] GET https://us.gcr.io/v2/corner-three/gcf/us-central1/tags/list {"child":[],"manifest":{},"name":"corner-three/gcf/us-central1","tags":[]}
+[debug] [2023-08-03T09:58:38.189Z] Could not find image for function projects/corner-three/locations/us-central1/functions/selectFeaturedPlayer
+[debug] [2023-08-03T09:58:39.321Z] <<< [apiv2][status] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/corner-three/locations/us-central1/repositories/gcf-artifacts/packages/select_featured_player 404
