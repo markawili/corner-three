@@ -13,7 +13,7 @@ export async function fetchData(endpoint) {
 }
 
 export async function getRandomPlayer() {
-    const endpoint = 'https://nba-stats-db.herokuapp.com/api/playerdata/season/2023/';
+    const endpoint = 'https://nba-stats-db.herokuapp.com/api/playerdata/name//';
     const allPlayers = await fetchAllPages(endpoint);
 
     if (allPlayers.length === 0) {
@@ -23,6 +23,17 @@ export async function getRandomPlayer() {
 
     const randomIndex = Math.floor(Math.random() * allPlayers.length);
     return allPlayers[randomIndex];
+}
+
+export async function fetchPlayerByName(name) {
+    const player = await fetchData(`playerdata/name/${name}`)
+
+    if (player.length === 0) {
+        console.error('No players found in the API.');
+        return null;
+    }
+
+    return player;
 }
 
 export async function fetchTeamPlayers(teamName) {

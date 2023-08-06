@@ -108,7 +108,7 @@ const PlayerOfTheDay = ({ player }) => {
                 m="auto"
                 mb={[16, 16, 'auto']}
             >
-                <MotionBox whileHover={{ scale: 1.2 }} rounded="full" >
+                <MotionBox whileHover={{ scale: 1.8 }} rounded="full" >
                     <Flex alignItems={'center'} boxSize={["15rem", "15rem", "20rem"]}>
                         <Image alt="A basketball player's silhouette" src={colorMode == "dark" ? silhouettedark : silhouettelight} />
                     </Flex>

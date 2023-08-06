@@ -1,5 +1,5 @@
 import Layout from '@/components/Layout'
-import { TableContainer, Table, TableCaption, Thead, Tr, Th, Tbody, Td, Tfoot, Stack, Flex, IconButton, Heading } from '@chakra-ui/react'
+import { TableContainer, Table, TableCaption, Thead, Tr, Th, Tbody, Td, Stack, Flex, IconButton, Heading } from '@chakra-ui/react'
 
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
@@ -28,7 +28,6 @@ const Team = () => {
 
     const sortData = (data) => {
         return data.sort((a, b) => {
-            // @ts-ignore
             return (b.PTS/b.games).toFixed(2) - (a.PTS/a.games).toFixed(2)
         })
     }

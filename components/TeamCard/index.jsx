@@ -1,7 +1,6 @@
 import {
     Card,
     Image,
-    Stack,
     CardBody,
     Heading,
     Spinner
@@ -14,6 +13,8 @@ import { app } from '@/firebase-config/config'
 import { useRouter } from 'next/router'
 
 import { useEffect, useState } from 'react'
+
+import { NBA_TEAM_CORRECT_ABBREVIATIONS } from '@/enums/teams'
 
 const TeamCard = ({ team }) => {
     const [imageURL, setImageURL] = useState(null)
@@ -65,6 +66,7 @@ const TeamCard = ({ team }) => {
                         maxH={"auto"}
                         src={imageURL}
                         alt={team.name}
+                        loading="lazy"
                     />
                 )
             }
@@ -76,7 +78,7 @@ const TeamCard = ({ team }) => {
                     }}
                     size='md'
                     textAlign="start"
-                    onClick={() => handleTeamSelection(team.abbreviation)}
+                    onClick={() => handleTeamSelection(NBA_TEAM_CORRECT_ABBREVIATIONS[team.abbreviation])}
                 >
                     {team.full_name}
                 </Heading>

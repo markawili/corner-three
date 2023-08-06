@@ -6,6 +6,7 @@ import {
 
 import { fetchTeams } from "@/pages/api/balldontlie"
 import { fetchAllPlayers } from "@/pages/api/nbastats"
+
 import CenterSpinner from "@/components/CenterSpinner"
 import TeamCard from "@/components/TeamCard"
 import PlayerSearch from "@/components/PlayerSearch"
@@ -13,9 +14,6 @@ import PlayerSearch from "@/components/PlayerSearch"
 const Roster = () => {
     const [isLoadingTeams, setIsLoadingTeams] = useState(true)
     const [teams, setTeams] = useState(null)
-
-    const [isLoadingPlayers, setIsLoadingPlayers] = useState(true)
-    const [players, setPlayers] = useState(null)
 
     useEffect(() => {
         async function getTeams() {
@@ -33,7 +31,7 @@ const Roster = () => {
 
     const rosterLoaded = (
         <>
-            {/* <PlayerSearch data={players} /> */}
+            <PlayerSearch />
             <SimpleGrid columns={3} spacingY="1.5rem" spacingX="1rem">
                 {
                     teams?.map((team) => {
