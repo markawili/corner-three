@@ -10,14 +10,14 @@ import {
 
 import { motion, isValidMotionProp } from 'framer-motion';
 
-// @ts-ignore
 import silhouettelight from "@/assets/silhouettelight.svg"
-// @ts-ignore
 import silhouettedark from "@/assets/silhouettedark.svg"
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import CenterSpinner from "../CenterSpinner";
+
+import { NBA_TEAMS } from "@/enums/teams";
 
 export const MotionBox = motion(
     forwardRef((props, ref) => {
@@ -144,7 +144,7 @@ const PlayerOfTheDay = ({ player }) => {
                 </Box>
                 <Flex direction="column" gap="1rem">
                     <Heading size="md">Name: {`${player?.player_name}`}</Heading>
-                    <Heading size="md">Team: {`${player?.team}`}</Heading>
+                    <Heading size="md">Team: {`${NBA_TEAMS[player?.team]}`}</Heading>
                     <Heading size="md">2023 Stats: { isLoading ? <Spinner size={'sm'}/> : stats }</Heading>
                 </Flex>
             </MotionFlex>

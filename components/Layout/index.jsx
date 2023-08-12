@@ -10,7 +10,6 @@ import Head from 'next/head';
 const items = [
     { label: 'Home', url: '/' },
     { label: 'Roster', url: '/roster' },
-    { label: 'Guess the Player', url: '/guess' },
 ]
 
 const Layout = ({ children }) => {

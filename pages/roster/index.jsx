@@ -5,11 +5,11 @@ import {
 } from "@chakra-ui/react"
 
 import { fetchTeams } from "@/pages/api/balldontlie"
-import { fetchAllPlayers } from "@/pages/api/nbastats"
 
 import CenterSpinner from "@/components/CenterSpinner"
 import TeamCard from "@/components/TeamCard"
 import PlayerSearch from "@/components/PlayerSearch"
+import { motion } from "framer-motion"
 
 const Roster = () => {
     const [isLoadingTeams, setIsLoadingTeams] = useState(true)
@@ -27,12 +27,21 @@ const Roster = () => {
         getTeams();
     }, [])
 
+    const MotionSimpleGrid = motion(SimpleGrid)
+
     const rosterLoading = <CenterSpinner />
 
     const rosterLoaded = (
         <>
             <PlayerSearch />
-            <SimpleGrid columns={3} spacingY="1.5rem" spacingX="1rem">
+            <MotionSimpleGrid 
+                columns={3}
+                spacingY="1.5rem"
+                spacingX="1rem"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+            >
                 {
                     teams?.map((team) => {
                         return (
@@ -40,7 +49,7 @@ const Roster = () => {
                         )
                     })
                 }
-            </SimpleGrid>
+            </MotionSimpleGrid>
         </>
     )
 

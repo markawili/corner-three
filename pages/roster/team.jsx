@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react'
 import { fetchTeamPlayers } from '../api/nbastats'
 import CenterSpinner from '@/components/CenterSpinner'
 import { ChevronLeftIcon } from '@chakra-ui/icons'
+import { motion } from 'framer-motion'
 
 const Team = () => {
     const router = useRouter()
@@ -26,6 +27,8 @@ const Team = () => {
         getTeamPlayers()
     }, [name])
 
+    const MotionStack = motion(Stack)
+
     const sortData = (data) => {
         return data.sort((a, b) => {
             return (b.PTS/b.games).toFixed(2) - (a.PTS/a.games).toFixed(2)
@@ -33,15 +36,31 @@ const Team = () => {
     }
 
     const handleGoBack = () => {
+        router.back();
+    }
+
+    const handleSelectPlayer = (item) => {
         router.push({
-            pathname: "/roster"
+            pathname: `/roster/player/`,
+            query: {
+                id: item?.id,
+                name: item?.player_name
+            }
         })
     }
 
     const teamData = teamPlayers?.map((player) => {
         return (
             <Tr key={player.id}>
-                <Td>{player.player_name}</Td>
+                <Td 
+                    onClick={() => handleSelectPlayer(player)}
+                    _hover={{
+                        cursor: 'pointer',
+                        textDecoration: 'underline'
+                    }}
+                >
+                    {player.player_name}
+                </Td>
                 <Td>{player.age}</Td>
                 <Td>{player.games}</Td>
                 <Td>{player.games_started}</Td>
@@ -65,7 +84,16 @@ const Team = () => {
 
     const playersLoaded = (
         <Layout>
-            <Stack gap={"1.5em"}>
+            <MotionStack 
+                gap={"1.5em"}
+                p={5}
+                borderWidth="1px"
+                borderRadius="xl"
+                boxShadow="xl"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+            >
                 <Flex alignItems="center" gap="1em">
                     <IconButton 
                         aria-label="Go back" 
@@ -101,7 +129,7 @@ const Team = () => {
                         </Tbody>
                     </Table>
                 </TableContainer>
-            </Stack>
+            </MotionStack>
         </Layout>
     )
 
